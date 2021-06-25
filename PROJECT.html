@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>도리 강아지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        body {background-color: cornsilk;}
+        .high-light{background-color : burlywood; color : darkgoldenrod;}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('h1').addClass('high-light');
+        }); //h1색상 변경
+        window.onload=function() {
+            var STARTbutton = document.getElementById('start');
+            STARTbutton.onclick = function () {
+              alert("지금부터 저희 집 막내를 소개합니다!"); //설명
+                setTimeout("location.href='dori.html'",200);
+            }; //이 버튼 누르면 alert창 뜬 뒤, setTimeout을 이용해 다른 페이지로 넘어간다.
+        };
+    </script>
+</head>
+<body>
+<h6> 60172343 김지윤 - project </h6>
+<!-- 소개영상 -- > </-->
+<embed align = "center" width="1920" height="1080" src="https://www.youtube.com/embed/GveZYQp2hZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></embed>
+<!-- h1의 버튼 누르면 작동. h5는 누르라는 표시 -- > </-->
+<h1 id="start" align="middle">DORI</h1>
+<h5 align="middle"> ↗ click </h5>
+
+</body>
+</html>
+

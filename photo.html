@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>dori - best photos </title>
+    <style>
+        .menubox {
+            width:1200px;
+            margin:0 auto;
+        }
+        #topMenu {
+            height : 80px;
+            width : 1200px;
+        }
+        #topMenu ul li{
+            list-style : none;
+            color : darkgoldenrod;
+            background : lemonchiffon;
+            float : left;
+            line-height:50px;
+            vertical-align: middle;
+            text-align:center;
+        }
+        #topMenu .menulink {
+            text-decoration:none;
+            color: darkgoldenrod;
+            display: block;
+            width: 200px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #topMenu .menulink:hover {
+            color: lemonchiffon;
+            background-color: darkgoldenrod;  }
+
+        *{font-family: 'Noto Serif KR', serif;}
+        body {background-color: cornsilk;}
+        .high-light{color : darkgoldenrod;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('h3').addClass('high-light');
+            $('h4').addClass('high-light');
+
+        });
+        var imageindex = 0; //이미지 index
+        window.onload=function(){
+
+            //(1) 이미지 슬라이드 함수 생성
+            img_slide()
+            //(2) 좋아요 버튼
+            var button = document.getElementById('like-button');
+            var counter = document.getElementById('like-counter');
+            button.onclick=function (){
+                counter.innerHTML = Number(counter.innerHTML)+1;
+            }; //버튼 누르면 카운터 값이 증가한다.
+        }
+        //(1) : 이미지 슬라이드
+        function img_slide(){ //slideShow 함수 내용 지정
+            var image=document.getElementsByClassName("slide_img"); //모든 이미지를 class이름으로 호출하여 x로 지정
+            for(var i=0;i<image.length;i++){
+                image[i].style.display="none"; //초기엔 display 전부 none.
+            }
+            imageindex++;
+            if(imageindex>image.length) {
+                alert("더이상 이미지가 없습니다. 슬라이드 종료."); //이미지 재생 끝
+            }
+            image[imageindex-1].style.display="block"; //해당 인덱스는 block
+            setTimeout(img_slide,1000); //함수 1초마다 호출. 사진이 1초 간격으로 달라진다.
+        };
+
+    </script>
+</head>
+
+<body>
+<div class = 'menubox'>
+<header>
+    <nav id ='topMenu'>
+        <ul>
+            <li><a class="menulink" href="dori.html">HOME</a> </li>
+            <li><a class="menulink" href = "information.html">INFORMATION </a></li>
+            <li><a class="menulink" href="photo.html">PHOTO</a> </li>
+            <li><a class="menulink" href="https://www.instagram.com/dorrikim/"> INSTAGRAM </a> </li>
+            <li><a class="menulink" href="mailto:rydlw109@naver.com"> SEND MAIL </a></li>
+        </ul>
+    </nav>
+</header>
+
+<h3> DORI'S PHOTOS </h3>
+
+<div>
+    <img src="https://github.com/rydlw109/dori/blob/master/baby.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EA%B3%B0%EB%8F%8C.PNG?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EA%BC%AC%EA%BC%AC%EB%A7%88%EB%98%98.jpeg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%88%95%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C%EB%A7%B9.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%AA%BD%ED%82%A4%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%B2%A0%EC%9D%B4%EB%B9%84%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%B9%B5%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EC%88%A8%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EC%95%84%EA%B0%80%EB%8F%8C%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EC%BD%94%EC%BD%94%EB%8F%8C.jpeg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EC%BD%94%EB%8F%8C.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C1.jpg?raw=true" width="600" height="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C2.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C3.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C4.jpg?raw=true" width="600" height="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C5.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C6.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C7.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C8.jpg?raw=true" width="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C9.jpg?raw=true" width="600" height="600" class="slide_img">
+    <img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%8C10.jpg?raw=true" width="600" class="slide_img">
+</div>
+<button id= "like-button"> 좋아요♥</button>
+<h4> ♥ + <span id = "like-counter"> 1 </span></h4>
+    <h4>
+        <a id = 'collectphoto' href="poodle.html">사진첩 들어가기!</a></h4>
+</div>
+</body>
+</html>

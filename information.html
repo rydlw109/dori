@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+
+  <title>ABOUT DORI </title>
+  <style>
+    .menubox {
+      width:1200px;
+      margin:0 auto;
+    }
+    #topMenu {
+      height : 80px;
+      width : 1200px;
+    }
+    #topMenu ul li{
+      list-style : none;
+      color : darkgoldenrod;
+      background : lemonchiffon;
+      float : left;
+      line-height:50px;
+      vertical-align: middle;
+      text-align:center;
+    }
+    #topMenu .menulink {
+      text-decoration:none;
+      color: darkgoldenrod;
+      display: block;
+      width: 200px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    #topMenu .menulink:hover {
+      color: lemonchiffon;
+      background-color: darkgoldenrod;  }
+
+    *{font-family: 'Noto Serif KR', serif;}
+    body {background-color: cornsilk;}
+    .high-light{color : darkgoldenrod;}
+
+    .border{
+      border:3px solid blanchedalmond;
+      border-radius: 3px;
+    }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('h3').addClass('high-light');
+    $('li').hover(function(){
+      $(this).addClass('border');},
+            function () {
+              $(this).removeClass('border');
+            });
+    //이미지 src를 객체타입으로 지정. appendTo를 통해 body에 내용 삽입
+    $('<img/>',{src:'https://github.com/rydlw109/dori/blob/master/%EB%8F%8C6.jpg?raw=true', width:400, height:400}).imgCentering().appendTo('body');
+
+  })
+  window.onload=function() {
+    var Poodlebutton = document.getElementById('poodle');
+    Poodlebutton.onclick = function () {
+      alert("푸들에 대한 설명 "); //설명
+      setTimeout("location.href='https://ko.wikipedia.org/wiki/%ED%91%B8%EB%93%A4'",200);
+    }; //버튼 누르면 alert창 뜬 뒤, setTimeout을 이용해 다른 페이지(wikipedia.푸들)로 넘어간다.
+  };
+</script>
+</head>
+<body>
+<div class = 'menubox'>
+  <header>
+    <nav id ='topMenu'>
+      <ul>
+        <li><a class="menulink" href="dori.html">HOME</a> </li>
+        <li><a class="menulink" href = "information.html">INFORMATION </a></li>
+        <li><a class="menulink" href="photo.html">PHOTO</a> </li>
+        <li><a class="menulink" href="https://www.instagram.com/dorrikim/"> INSTAGRAM </a> </li>
+        <li><a class="menulink" href="mailto:rydlw109@naver.com"> SEND MAIL </a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h3> 도리는 저희 집 강아지 입니다.</h3>
+    <br>
+    <p id = 'poodle'> 견종은 <a><u style="font-weight:bold;font-style:italic;" >푸들</u></a>이고,</p>
+    <p> 토이푸들이라 크기는 작은 편입니다.</p>
+    <br>
+    <p> 2020년 2월 7일에 태어났으며, 현재 나이는 1살입니다.</p>
+    <p> 도리는 생후 2개월이 조금 지났을 때 저희 집으로 왔는데,</p>
+    <p> 그 이후부터 산책을 매일매일 나가서 체력이 넘치는 강아지가 되었습니다.</p>
+    <p> 달리기와 공놀이를 좋아하고 사람들, 친구들이랑 노는 걸 가장 좋아하는 애교 많은 강아지입니다.</p>
+    <br>
+    <p> 여기까지 저의 가장 친한 친구에 대한 소개였습니다.</p>
+    <p> 도리에 대해 자세히 알고싶으시다면 위의 <a href="https://www.instagram.com/dorrikim/">INSTAGRAM</a> 으로 들어가주세요! </p>
+    <img src='https://github.com/rydlw109/dori/blob/master/%EB%8F%8C6.jpg?raw=true', width="350", height="350">
+  </div>
+</div>
+</body>
+</html>

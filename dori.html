@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>ABOUT DORI</title>
+    <style>
+        .reverse{
+            background : whitesmoke;
+        }
+        *{font-family: 'Noto Serif KR', serif;}
+        body {background-color: cornsilk;}
+        .high-light{color : darkgoldenrod;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // h1 tag 부분 폰트 색상 변경 , J쿼리 이용
+        $(document).ready(function() {
+            $('h1').addClass('high-light');
+            $('h2').addClass('high-light');
+            //h3 tag에 대한 마우스 이벤트. hover는 mouseenter, mouseleave 동시에 연결 가능한 함수.
+            $('h2').hover(
+                function(){$(this).addClass('reverse');},
+                function(){$(this).removeClass('reverse');}
+            );
+        });
+        window.onload = function() {
+            //(btn) 버튼 누르면 신상정보 나오는 것 - 배열 내용을 for문 이용하여 나타내기
+            var intro0 = document.getElementById('dori_button');
+            var array_intro = ['생일 : 2020.02.07', '나이 : 1살 ','성별 : 수컷','특기 : 달리기'];
+            dori_button.onclick = function(){
+                for ( var i=0;  i<4; i++ ) {
+                    alert(array_intro[i]);
+                }
+            };
+            //(0)
+            var information = document.getElementById("information");
+            information.onclick = function(){
+                information.style.color  = 'brown';
+                location.href = "information.html"
+            }
+            //(1)
+            var photo = document.getElementById("photo");
+            photo.onclick = function (){
+                alert("2020.04~2021.05 기록")
+                photo.style.color = 'brown';
+                location.href = "photo.html"
+            }
+            //(2) 인스타그램 링크 연동
+            var instagram = document.getElementById("instagram");
+                instagram.onclick = function(){
+                    instagram.style.color = 'brown'; //click시 색상 brown으로 변경
+                    location.href="https://www.instagram.com/dorrikim/"} //인스타그램 링크
+            //(3) 메일 보내기
+            var mail = document.getElementById('mail');
+                mail.onclick = function(){
+                    mail.style.color = 'brown';
+                    location.href="mailto:rydlw109@naver.com"
+                }
+            //(4) 밥 먹으러 가는 강아지 애니메이션
+            var puppy = document.getElementById('puppy'); //puppy 이미지 움직이게!
+                puppy.style.position = 'absolute';
+                puppy.style.left = 550+'px';
+                puppy.style.right = 250+'px';
+            var puppyAngle = 0; //위치는 계속 변화할 것이므로 0으로 셋팅한다
+            setInterval(function () {
+                var puppyLeft = 500 + 350 * Math.cos(puppyAngle);
+                var puppyTop = 550 + 450 * Math.sin(puppyAngle); //위치값 계산. bowl img와 맞춰서 해보았습니다.
+                puppy.style.left = puppyLeft + 'px';
+                puppy.style.right = puppyTop + 'px';
+                puppyAngle += 0.1; //계속 변화하도록
+            },300); //0.3초마다 움직인다.
+        };
+    </script>
+</head>
+<body>
+<button id="dori_button"> 빠르게 보는 신상정보 </button><br>
+<hr size="6" width="100%" align="left" color="olive">
+<h1 align = 'middle' > A B O U T 도 리</h1>
+<hr size="6" width="100%" align="left" color="olive">
+<br><br>
+<h2 align = 'middle' id="information"> 도 리 소 개  ▷ </h2>
+<h2 align = 'middle' id="photo" > 도 리 사 진      ▷ </h2>
+<h2 id="instagram" align = 'middle'>instagram ▷ </h2>
+<h2 id="mail" align='middle'>send mail ▷ </h2>
+<br><br><br><br><br><br><br>
+<img src="https://github.com/rydlw109/dori/blob/master/bob.png?raw=true" width = '180' id = 'bowl'>
+<img src="https://github.com/rydlw109/dori/blob/master/%EB%8F%84%EB%A6%AC.png?raw=true" id ='puppy' width="180">
+</body>
+</html>
